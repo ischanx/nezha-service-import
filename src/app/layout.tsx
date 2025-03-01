@@ -31,7 +31,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <body className="bg-gray-50">{children}</body>
+      <body className="bg-gray-50">
+        {children}
+        <script
+          defer
+          src="https://umami.showmecode.net/script.js"
+          data-website-id="eb05536a-3941-479f-a97f-18b7c9dc791f"
+        ></script>
+      </body>
     </html>
   );
 }
