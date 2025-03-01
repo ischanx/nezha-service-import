@@ -1,0 +1,157 @@
+{
+  "河北": {
+    "联通": "he-cu-v6.ip.zstaticcdn.com",
+    "移动": "he-cm-v6.ip.zstaticcdn.com",
+    "电信": "he-ct-v6.ip.zstaticcdn.com"
+  },
+  "山西": {
+    "联通": "sx-cu-v6.ip.zstaticcdn.com",
+    "移动": "sx-cm-v6.ip.zstaticcdn.com",
+    "电信": "sx-ct-v6.ip.zstaticcdn.com"
+  },
+  "辽宁": {
+    "联通": "ln-cu-v6.ip.zstaticcdn.com",
+    "移动": "ln-cm-v6.ip.zstaticcdn.com",
+    "电信": "ln-ct-v6.ip.zstaticcdn.com"
+  },
+  "吉林": {
+    "联通": "jl-cu-v6.ip.zstaticcdn.com",
+    "移动": "jl-cm-v6.ip.zstaticcdn.com",
+    "电信": "jl-ct-v6.ip.zstaticcdn.com"
+  },
+  "黑龙江": {
+    "联通": "hl-cu-v6.ip.zstaticcdn.com",
+    "移动": "hl-cm-v6.ip.zstaticcdn.com",
+    "电信": "hl-ct-v6.ip.zstaticcdn.com"
+  },
+  "江苏": {
+    "联通": "js-cu-v6.ip.zstaticcdn.com",
+    "移动": "js-cm-v6.ip.zstaticcdn.com",
+    "电信": "js-ct-v6.ip.zstaticcdn.com"
+  },
+  "浙江": {
+    "联通": "zj-cu-v6.ip.zstaticcdn.com",
+    "移动": "zj-cm-v6.ip.zstaticcdn.com",
+    "电信": "zj-ct-v6.ip.zstaticcdn.com"
+  },
+  "安徽": {
+    "联通": "ah-cu-v6.ip.zstaticcdn.com",
+    "移动": "ah-cm-v6.ip.zstaticcdn.com",
+    "电信": "ah-ct-v6.ip.zstaticcdn.com"
+  },
+  "福建": {
+    "联通": "fj-cu-v6.ip.zstaticcdn.com",
+    "移动": "fj-cm-v6.ip.zstaticcdn.com",
+    "电信": "fj-ct-v6.ip.zstaticcdn.com"
+  },
+  "江西": {
+    "联通": "jx-cu-v6.ip.zstaticcdn.com",
+    "移动": "jx-cm-v6.ip.zstaticcdn.com",
+    "电信": "jx-ct-v6.ip.zstaticcdn.com"
+  },
+  "山东": {
+    "联通": "sd-cu-v6.ip.zstaticcdn.com",
+    "移动": "sd-cm-v6.ip.zstaticcdn.com",
+    "电信": "sd-ct-v6.ip.zstaticcdn.com"
+  },
+  "河南": {
+    "联通": "ha-cu-v6.ip.zstaticcdn.com",
+    "移动": "ha-cm-v6.ip.zstaticcdn.com",
+    "电信": "ha-ct-v6.ip.zstaticcdn.com"
+  },
+  "湖北": {
+    "联通": "hb-cu-v6.ip.zstaticcdn.com",
+    "移动": "hb-cm-v6.ip.zstaticcdn.com",
+    "电信": "hb-ct-v6.ip.zstaticcdn.com"
+  },
+  "湖南": {
+    "联通": "hn-cu-v6.ip.zstaticcdn.com",
+    "移动": "hn-cm-v6.ip.zstaticcdn.com",
+    "电信": "hn-ct-v6.ip.zstaticcdn.com"
+  },
+  "广东": {
+    "联通": "gd-cu-v6.ip.zstaticcdn.com",
+    "移动": "gd-cm-v6.ip.zstaticcdn.com",
+    "电信": "gd-ct-v6.ip.zstaticcdn.com"
+  },
+  "海南": {
+    "联通": "hi-cu-v6.ip.zstaticcdn.com",
+    "移动": "hi-cm-v6.ip.zstaticcdn.com",
+    "电信": "hi-ct-v6.ip.zstaticcdn.com"
+  },
+  "四川": {
+    "联通": "sc-cu-v6.ip.zstaticcdn.com",
+    "移动": "sc-cm-v6.ip.zstaticcdn.com",
+    "电信": "sc-ct-v6.ip.zstaticcdn.com"
+  },
+  "贵州": {
+    "联通": "gz-cu-v6.ip.zstaticcdn.com",
+    "移动": "gz-cm-v6.ip.zstaticcdn.com",
+    "电信": "gz-ct-v6.ip.zstaticcdn.com"
+  },
+  "云南": {
+    "联通": "yn-cu-v6.ip.zstaticcdn.com",
+    "移动": "yn-cm-v6.ip.zstaticcdn.com",
+    "电信": "yn-ct-v6.ip.zstaticcdn.com"
+  },
+  "陕西": {
+    "联通": "sn-cu-v6.ip.zstaticcdn.com",
+    "移动": "sn-cm-v6.ip.zstaticcdn.com",
+    "电信": "sn-ct-v6.ip.zstaticcdn.com"
+  },
+  "甘肃": {
+    "联通": "gs-cu-v6.ip.zstaticcdn.com",
+    "移动": "gs-cm-v6.ip.zstaticcdn.com",
+    "电信": "gs-ct-v6.ip.zstaticcdn.com"
+  },
+  "青海": {
+    "联通": "qh-cu-v6.ip.zstaticcdn.com",
+    "移动": "qh-cm-v6.ip.zstaticcdn.com",
+    "电信": "qh-ct-v6.ip.zstaticcdn.com"
+  },
+  "内蒙古": {
+    "联通": "nm-cu-v6.ip.zstaticcdn.com",
+    "移动": "nm-cm-v6.ip.zstaticcdn.com",
+    "电信": "nm-ct-v6.ip.zstaticcdn.com"
+  },
+  "广西": {
+    "联通": "gx-cu-v6.ip.zstaticcdn.com",
+    "移动": "gx-cm-v6.ip.zstaticcdn.com",
+    "电信": "gx-ct-v6.ip.zstaticcdn.com"
+  },
+  "西藏": {
+    "联通": "xz-cu-v6.ip.zstaticcdn.com",
+    "移动": "xz-cm-v6.ip.zstaticcdn.com",
+    "电信": "xz-ct-v6.ip.zstaticcdn.com"
+  },
+  "宁夏": {
+    "联通": "nx-cu-v6.ip.zstaticcdn.com",
+    "移动": "nx-cm-v6.ip.zstaticcdn.com",
+    "电信": "nx-ct-v6.ip.zstaticcdn.com"
+  },
+  "新疆": {
+    "联通": "xj-cu-v6.ip.zstaticcdn.com",
+    "移动": "xj-cm-v6.ip.zstaticcdn.com",
+    "电信": "xj-ct-v6.ip.zstaticcdn.com"
+  },
+  "北京": {
+    "联通": "bj-cu-v6.ip.zstaticcdn.com",
+    "移动": "bj-cm-v6.ip.zstaticcdn.com",
+    "电信": "bj-ct-v6.ip.zstaticcdn.com"
+  },
+  "天津": {
+    "联通": "tj-cu-v6.ip.zstaticcdn.com",
+    "移动": "tj-cm-v6.ip.zstaticcdn.com",
+    "电信": "tj-ct-v6.ip.zstaticcdn.com"
+  },
+  "上海": {
+    "联通": "sh-cu-v6.ip.zstaticcdn.com",
+    "移动": "sh-cm-v6.ip.zstaticcdn.com",
+    "电信": "sh-ct-v6.ip.zstaticcdn.com"
+  },
+  "重庆": {
+    "联通": "cq-cu-v6.ip.zstaticcdn.com",
+    "移动": "cq-cm-v6.ip.zstaticcdn.com",
+    "电信": "cq-ct-v6.ip.zstaticcdn.com"
+  }
+}
