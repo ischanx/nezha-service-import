@@ -52,13 +52,16 @@ export const generateTaskData = (options: { name: string, target: string } & Par
     recover_trigger_tasks: [],
     recover_trigger_tasks_raw: '',
     skip_servers: {},
-    target: `${options.target}:80`,
+    target: options.target,
     type: 3,
   };
 
-  // 合并默认值和用户提供的选项
-  return {
+  const data = {
     ...defaultData,
     ...options,
   };
+
+  data.target = `${data.target}:80`;
+
+  return data;
 };
