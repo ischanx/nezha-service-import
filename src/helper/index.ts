@@ -1,6 +1,16 @@
 import axios from 'axios';
 import { TaskData } from '../app/const';
 
+export const getList = async (options: { baseUrl: string, cookie: string }) => {
+  const response = await axios.get(`${options.baseUrl}/api/v1/service/list`, {
+    headers: {
+      cookie: options.cookie,
+    },
+  });
+
+  return response.data;
+};
+
 export const addTask = async (data: TaskData, options: { baseUrl: string, cookie: string }) => {
   const response = await axios.post(`${options.baseUrl}/api/v1/service`, data, {
     headers: {

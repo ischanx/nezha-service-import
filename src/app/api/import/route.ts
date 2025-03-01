@@ -8,14 +8,6 @@ interface RequestBody {
   data: any;
 }
 
-// 添加 GET 方法，用于测试 API 是否正常工作
-export async function GET() {
-  return NextResponse.json({
-    status: 'ok',
-    message: 'Import API 正常工作',
-    timestamp: new Date().toISOString()
-  });
-}
 
 export async function POST(request: NextRequest) {
   try {

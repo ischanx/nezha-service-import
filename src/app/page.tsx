@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // 导入示例数据
@@ -18,6 +18,59 @@ export default function Home() {
   const [duration, setDuration] = useState<number>(30);
   const [maxLatency, setMaxLatency] = useState<number>(0);
   const [minLatency, setMinLatency] = useState<number>(0);
+  const [isApiValid, setIsApiValid] = useState<boolean>(false);
+  const [validationMessage, setValidationMessage] = useState<string>('');
+
+  // 验证API连接
+  const validateApi = async () => {
+    if (!baseUrl || !cookie) {
+      setIsApiValid(false);
+      setValidationMessage('请输入基础URL和Cookie');
+      return false;
+    }
+
+    try {
+      setValidationMessage('正在验证API连接...');
+      const res = await axios.post('/api/list', {
+        baseUrl,
+        cookie,
+      });
+      if (res.data) {
+        setIsApiValid(true);
+        setValidationMessage('API连接验证成功');
+        return true;
+      } else {
+        setIsApiValid(false);
+        setValidationMessage('API连接验证失败');
+        return false;
+      }
+    } catch (error: any) {
+      setIsApiValid(false);
+      setValidationMessage(`API连接验证失败: ${error.message}`);
+      return false;
+    }
+  };
+
+  // 当baseUrl或cookie变化时重置验证状态
+  useEffect(() => {
+    setIsApiValid(false);
+    setValidationMessage('');
+  }, [baseUrl, cookie]);
+
+  // 处理URL输入完成时的自动补全
+  const handleUrlChange = (url: string) => {
+    let processedUrl = url.trim();
+
+    // 自动补全协议
+    if (
+      !processedUrl.startsWith('http://') &&
+      !processedUrl.startsWith('https://')
+    ) {
+      processedUrl = 'https://' + processedUrl;
+    }
+
+    setBaseUrl(processedUrl);
+  };
 
   // 添加单个任务
   const addTask = async (data: TaskData) => {
@@ -108,6 +161,40 @@ export default function Home() {
       return;
     }
 
+    // 验证URL是否有效
+    let isValidUrl = false;
+    try {
+      const url = new URL(baseUrl);
+      if (['http:', 'https:'].includes(url.protocol)) {
+        isValidUrl = true;
+      } else {
+        setResults([
+          {
+            name: '错误',
+            target: '',
+            success: false,
+            response: 'URL必须以http://或https://开头',
+          },
+        ]);
+        return;
+      }
+    } catch (error) {
+      setResults([
+        {
+          name: '错误',
+          target: '',
+          success: false,
+          response: 'URL格式不正确，请输入有效的URL',
+        },
+      ]);
+      return;
+    }
+
+    // 如果URL无效，不继续执行
+    if (!isValidUrl) {
+      return;
+    }
+
     if (!cookie) {
       setResults([
         { name: '错误', target: '', success: false, response: '请输入Cookie' },
@@ -117,6 +204,22 @@ export default function Home() {
 
     try {
       setIsLoading(true);
+
+      // 先验证API连接
+      const isValid = await validateApi();
+      if (!isValid) {
+        setResults([
+          {
+            name: '错误',
+            target: '',
+            success: false,
+            response: `API连接验证失败: ${validationMessage}`,
+          },
+        ]);
+        setIsLoading(false);
+        return;
+      }
+
       setProgress('开始添加任务...');
       if (dataType === 'ipv4') {
         await addAllTasks(ipv4Data);
@@ -171,6 +274,7 @@ export default function Home() {
             id="baseUrl"
             value={baseUrl}
             onChange={e => setBaseUrl(e.target.value)}
+            onBlur={e => handleUrlChange(e.target.value)}
             placeholder="通信地址, 如: https://nezha.example.com:8008"
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
           />
@@ -243,26 +347,33 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex gap-3 mb-4 justify-center">
+        <div className="mb-4 flex items-center gap-3">
+          <button
+            onClick={validateApi}
+            disabled={isLoading || !baseUrl || !cookie}
+            className="transition-colors duration-300 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            验证API连接
+          </button>
           <button
             onClick={() => handleAddTasks('ipv4')}
-            disabled={isLoading}
+            disabled={isLoading || !isApiValid}
             className="transition-colors duration-300 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? '处理中...' : '导入IPv4监控'}
           </button>
           <button
             onClick={() => handleAddTasks('ipv6')}
-            disabled={isLoading}
+            disabled={isLoading || !isApiValid}
             className="transition-colors duration-300 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? '处理中...' : '导入IPv6监控'}
           </button>
         </div>
 
-        {progress && (
+        {(progress || validationMessage) && (
           <div className="text-sm text-gray-600 mb-3 p-2 rounded border border-gray-200 text-center">
-            {progress}
+            {progress || validationMessage}
           </div>
         )}
 
